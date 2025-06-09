@@ -1,8 +1,8 @@
 // Importing necessary components and data
-import Header from "./components/Header.jsx";         // Header component for the application
-import Shop from "./components/Shop.jsx";             // Shop component that will contain products
-import Product from "./components/Product.jsx";        // Product component to display individual products
-import { DUMMY_PRODUCTS } from "./dummy-products.js";  // Mock product data
+import Header from "./components/Header.jsx"; // Header component for the application
+import Shop from "./components/Shop.jsx"; // Shop component that will contain products
+import Product from "./components/Product.jsx"; // Product component to display individual products
+import { DUMMY_PRODUCTS } from "./dummy-products.js"; // Mock product data
 import CartContextProvider from "./store/shopping-cart-context.jsx"; // Context provider for cart state management
 
 // Main App component
@@ -12,7 +12,7 @@ function App() {
     <CartContextProvider>
       {/* Render the Header component */}
       <Header />
-      
+
       {/* Render the Shop component which acts as a container for products */}
       <Shop>
         {/* Mapping through DUMMY_PRODUCTS array to render each product */}

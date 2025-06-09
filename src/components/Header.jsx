@@ -37,9 +37,9 @@ export default function Header() {
       <CartModal
         ref={modal}
         title="Your Cart"
-        actions={modalActions}  // Dynamic actions based on cart content
+        actions={modalActions} // Dynamic actions based on cart content
       />
-      
+
       {/* Main header section */}
       <header id="main-header">
         {/* Logo and title container */}
@@ -49,11 +49,11 @@ export default function Header() {
           {/* Main heading */}
           <h1>Elegant Context</h1>
         </div>
-        
+
         {/* Cart button with item count */}
         <p>
           <button onClick={handleOpenCartClick}>
-            Cart ({cartQuantity})  {/* Display current cart quantity */}
+            Cart ({cartQuantity}) {/* Display current cart quantity */}
           </button>
         </p>
       </header>

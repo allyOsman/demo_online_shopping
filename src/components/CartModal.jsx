@@ -1,7 +1,7 @@
 // Import React hooks and utilities
 import { forwardRef, useImperativeHandle, useRef } from "react";
-import { createPortal } from "react-dom";  // For portal-based rendering
-import Cart from "./Cart.jsx";  // Cart component to display inside modal
+import { createPortal } from "react-dom"; // For portal-based rendering
+import Cart from "./Cart.jsx"; // Cart component to display inside modal
 
 // Modal component with forwarded ref for parent control
 const CartModal = forwardRef(function Modal({ title, actions }, ref) {
@@ -13,7 +13,7 @@ const CartModal = forwardRef(function Modal({ title, actions }, ref) {
     return {
       // Method to open the modal
       open: () => {
-        dialog.current.showModal();  // Native dialog API
+        dialog.current.showModal(); // Native dialog API
       },
     };
   });
@@ -24,10 +24,10 @@ const CartModal = forwardRef(function Modal({ title, actions }, ref) {
     <dialog id="modal" ref={dialog}>
       {/* Modal title */}
       <h2>{title}</h2>
-      
+
       {/* Cart component with all cart items */}
       <Cart />
-      
+
       {/* Form with dialog method enables native close behavior */}
       <form method="dialog" id="modal-actions">
         {/* Actions passed from parent (Close/Checkout buttons) */}

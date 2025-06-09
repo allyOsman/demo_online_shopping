@@ -9,9 +9,9 @@ export default function Cart() {
   // Calculate total price by summing all items (price * quantity)
   const totalPrice = items.reduce(
     (acc, item) => acc + item.price * item.quantity,
-    0  // Initial accumulator value
+    0 // Initial accumulator value
   );
-  
+
   // Format total price to 2 decimal places with dollar sign
   const formattedTotalPrice = `$${totalPrice.toFixed(2)}`;
 
@@ -19,7 +19,7 @@ export default function Cart() {
     <div id="cart">
       {/* Show empty cart message if no items */}
       {items.length === 0 && <p>No items in cart!</p>}
-      
+
       {/* Render cart items if cart is not empty */}
       {items.length > 0 && (
         <ul id="cart-items">
@@ -52,7 +52,7 @@ export default function Cart() {
           })}
         </ul>
       )}
-      
+
       {/* Display cart total at the bottom */}
       <p id="cart-total-price">
         Cart Total: <strong>{formattedTotalPrice}</strong>

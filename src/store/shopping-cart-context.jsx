@@ -24,7 +24,7 @@ export const CartContext = createContext({
  */
 function shoppingCartReducer(state, action) {
   // Handle ADD_ITEM action
-  if (action.type === 'ADD_ITEM') {
+  if (action.type === "ADD_ITEM") {
     // Create a copy of current items array (immutable update)
     const updatedItems = [...state.items];
 
@@ -43,7 +43,9 @@ function shoppingCartReducer(state, action) {
       updatedItems[existingCartItemIndex] = updatedItem;
     } else {
       // If new item, find product details from dummy data and add to cart
-      const product = DUMMY_PRODUCTS.find((product) => product.id === action.payload);
+      const product = DUMMY_PRODUCTS.find(
+        (product) => product.id === action.payload
+      );
       updatedItems.push({
         id: action.payload,
         name: product.title,
@@ -60,7 +62,7 @@ function shoppingCartReducer(state, action) {
   }
 
   // Handle UPDATE_ITEM action
-  if (action.type === 'UPDATE_ITEM') {
+  if (action.type === "UPDATE_ITEM") {
     // Create a copy of current items array (immutable update)
     const updatedItems = [...state.items];
 
@@ -119,8 +121,8 @@ export default function CartContextProvider({ children }) {
    */
   function handleAddItemToCart(id) {
     shoppingCartDispatch({
-      type: 'ADD_ITEM',
-      payload: id
+      type: "ADD_ITEM",
+      payload: id,
     });
   }
 
@@ -132,11 +134,11 @@ export default function CartContextProvider({ children }) {
    */
   function handleUpdateCartItemQuantity(productId, amount) {
     shoppingCartDispatch({
-      type: 'UPDATE_ITEM',
+      type: "UPDATE_ITEM",
       payload: {
         productId,
         amount,
-      }
+      },
     });
   }
 
